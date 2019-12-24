@@ -8,52 +8,115 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <style>
+        .dropdown_content span .icon-chevron-down { float:right; transition:all .25s ease; } 
+        .dropdown_content span.open i.icon-chevron-down { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+    </style>
+
+    $(function() {
+        var Accordion = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+            
+            var links = this.el.find('.links');         // 로컬변수
+            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)     // 이벤트
+        }
+        
+        Accordion.prototype.dropdown = function(e) {
+            var $el = e.data.el;
+                $this = $(this),
+                $next = $this.next();
+    
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+    
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }    
+    
+        var accordion = new Accordion($('#profile_dropdown'), false);         // 로컬변수
+    });
+ 
 </head>
 <body>
-    <!-- 1. header -->
-    <div id="header" class="jumbotron text-center bg-info mb-0">
-        <h1>Bootstrap Tamplate Page</h1>
-        <p>This is bootstrap tamplate page</p>
-    </div>
-
-    <!-- 2. nav -->
-    <div id="nav" class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <p>java</p>
-
-    </div>
-
+    /* Html */
+    <span id="profile_dropdown" class="dropdown_content popupVideo">
+        <div class="links">메인 메뉴 1<i class="fa-chevron-down"></i></a></div>
+        <span>
+            <ul class="submenu">
+                <li><a href="#">서브 메뉴 1-1</a></li>
+                <li><a href="#">서브 메뉴 1-2</a></li>
+            </ul>
+        </span>
+        
+        <div class="links">메인 메뉴 2 <i class="fa-chevron-down"></i></a></div>
+        <span>
+            <ul class="submenu">
+                <li><a href="#">서브 메뉴 2-1</a></li>
+                <li><a href="#">서브 메뉴 2-2</a></li>
+            </ul>
+        </span>
+    </span>
+ 
     <!-- 3. content -->
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-      
-    <!-- 4. footer -->
+      <p>
+          <img src="./imgs/java.png" alt="" width="10%">
+          <img src="./imgs/java_b.png" alt="" width="10%">
+      </p>
+    
+      ///////////////////////////////////////////////////////////
+    <table class="table">
+        <button type="button" class="btn btn-primary mr-3">
+            Notifications <span class="badge badge-light">4</span>
+        </button>
+        <button type="button" class="btn btn-primary mr-1">
+            Notifications <span class="badge badge-light">4</span>
+        </button>
+        <button type="button" class="btn btn-primary mr-2">
+            Notifications <span class="badge badge-light">4</span>
+        </button>
+        <button type="button" class="btn btn-primary mr-4">
+            Notifications <span class="badge badge-light">4</span>
+        </button>
+          
+        <div class="accordion vertical">
+            <ul>
+                <li>
+                    <input type="radio" id="radio-1" name="radio-accordion" checked="checked" />
+                    <label for="radio-1">연구 공간</label>
+                    <div class="content">
+                        <h3>공지 및 업데이트</h3>
+                        <p>java의 최근 소식을 전해 드립니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" id="radio-2" name="radio-accordion" />
+                    <label for="radio-2">문제 해결</label>
+                    <div class="content">
+                        <h3>I am not an Oracle employee and need a visa to enter the United States to attend the Oracle Code One event. What does Oracle provide in this regard?</h3>
+                        <p>A statement confirming registration and your planned attendance is available upon completion of the registration process, and after providing all required information. You are responsible for complying with all applicable US immigration laws, and should consult with your own employer or other resources regarding questions about US visas and requirements. For information on US embassies and US consulates: https://www.usembassy.gov.</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" id="radio-3" name="radio-accordion" />
+                    <label for="radio-3">연구소 통계</label>
+                    <div class="content">
+                        <h3>What is Oracle Code One?</h3>
+                        <p>Oracle Code One is the ultimate developer event where we will cover the technologies and programming languages developers have come to love over the years. Expect talks on Go, Rust, Python, JavaScript, and R and SQL along with more of the latest Java technical content.</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="radio" id="radio-4" name="radio-accordion" />
+                    <label for="radio-4">현재 접속 중인 회원</label>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum. Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </table>
 </body>
 </html>
