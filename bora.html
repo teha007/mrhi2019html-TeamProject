@@ -1,122 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title></title>
+  <meta charset="utf-8">
+  <title></title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src=""></script>
 
-    <style>
-        .dropdown_content span .icon-chevron-down { float:right; transition:all .25s ease; } 
-        .dropdown_content span.open i.icon-chevron-down { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
-    </style>
+  <style>
+    #list1, #list2, #list3, #list4 {
+      visibility: collapse;
+    }
+  </style>
 
-    $(function() {
-        var Accordion = function(el, multiple) {
-            this.el = el || {};
-            this.multiple = multiple || false;
-            
-            var links = this.el.find('.links');         // 로컬변수
-            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)     // 이벤트
+  <script>
+    function toggle_submenu(element)
+      {
+        // 개체가 존재한다면 다음 작업을 수행한다.
+        if ( element != null )
+        {
+          // 보임 상태라면 숨김 상태로, 숨김 상태라면 보임 상태로 전환한다.
+          ( element.style.display != "none" ) ? element.style.display = "none" : element.style.display = "";
         }
-        
-        Accordion.prototype.dropdown = function(e) {
-            var $el = e.data.el;
-                $this = $(this),
-                $next = $this.next();
-    
-            $next.slideToggle();
-            $this.parent().toggleClass('open');
-    
-            if (!e.data.multiple) {
-                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-            };
-        }    
-    
-        var accordion = new Accordion($('#profile_dropdown'), false);         // 로컬변수
-    });
- 
-</head>
-<body>
-    /* Html */
-    <span id="profile_dropdown" class="dropdown_content popupVideo">
-        <div class="links">메인 메뉴 1<i class="fa-chevron-down"></i></a></div>
-        <span>
-            <ul class="submenu">
-                <li><a href="#">서브 메뉴 1-1</a></li>
-                <li><a href="#">서브 메뉴 1-2</a></li>
-            </ul>
-        </span>
-        
-        <div class="links">메인 메뉴 2 <i class="fa-chevron-down"></i></a></div>
-        <span>
-            <ul class="submenu">
-                <li><a href="#">서브 메뉴 2-1</a></li>
-                <li><a href="#">서브 메뉴 2-2</a></li>
-            </ul>
-        </span>
-    </span>
- 
-    <!-- 3. content -->
-      <p>
-          <img src="./imgs/java.png" alt="" width="10%">
-          <img src="./imgs/java_b.png" alt="" width="10%">
-      </p>
-    
-      ///////////////////////////////////////////////////////////
-    <table class="table">
-        <button type="button" class="btn btn-primary mr-3">
-            Notifications <span class="badge badge-light">4</span>
-        </button>
-        <button type="button" class="btn btn-primary mr-1">
-            Notifications <span class="badge badge-light">4</span>
-        </button>
-        <button type="button" class="btn btn-primary mr-2">
-            Notifications <span class="badge badge-light">4</span>
-        </button>
-        <button type="button" class="btn btn-primary mr-4">
-            Notifications <span class="badge badge-light">4</span>
-        </button>
-          
-        <div class="accordion vertical">
-            <ul>
-                <li>
-                    <input type="radio" id="radio-1" name="radio-accordion" checked="checked" />
-                    <label for="radio-1">연구 공간</label>
-                    <div class="content">
-                        <h3>공지 및 업데이트</h3>
-                        <p>java의 최근 소식을 전해 드립니다.</p>
-                    </div>
-                </li>
-                <li>
-                    <input type="radio" id="radio-2" name="radio-accordion" />
-                    <label for="radio-2">문제 해결</label>
-                    <div class="content">
-                        <h3>I am not an Oracle employee and need a visa to enter the United States to attend the Oracle Code One event. What does Oracle provide in this regard?</h3>
-                        <p>A statement confirming registration and your planned attendance is available upon completion of the registration process, and after providing all required information. You are responsible for complying with all applicable US immigration laws, and should consult with your own employer or other resources regarding questions about US visas and requirements. For information on US embassies and US consulates: https://www.usembassy.gov.</p>
-                    </div>
-                </li>
-                <li>
-                    <input type="radio" id="radio-3" name="radio-accordion" />
-                    <label for="radio-3">연구소 통계</label>
-                    <div class="content">
-                        <h3>What is Oracle Code One?</h3>
-                        <p>Oracle Code One is the ultimate developer event where we will cover the technologies and programming languages developers have come to love over the years. Expect talks on Go, Rust, Python, JavaScript, and R and SQL along with more of the latest Java technical content.</p>
-                    </div>
-                </li>
-                <li>
-                    <input type="radio" id="radio-4" name="radio-accordion" />
-                    <label for="radio-4">현재 접속 중인 회원</label>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum. Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
 
+        // 함수 작업을 명시적으로 종료한다.
+        return;
+      }
+  </script>
+
+</head>
+
+<body>
+  <div class="">
+      <ul class="list-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <label for="radio-1">연구 공간&nbsp;&nbsp;V</label>
+          <div class="dropdown-menu">
+            <h3>공지 및 업데이트</h3>
+            <p>java의 최근 소식을 전해 드립니다.</p>
+          </div>
+        </button>
+        <li class="list-group-item list-group-item-primary">
+          <label for="radio-2">문제 해결&nbsp;&nbsp;V</label>
+          <li class="list-group-item list-group-item-light" id="list2">
+            <h3>I am not an Oracle employee and need a visa to enter the United States to attend the Oracle Code One
+              event. What does Oracle provide in this regard?</h3>
+            <p>A statement confirming registration and your planned attendance is available upon completion of the
+              registration process, and after providing all required information. You are responsible for complying with
+              all applicable US immigration laws, and should consult with your own employer or other resources regarding
+              questions about US visas and requirements. For information on US embassies and US consulates:
+              https://www.usembassy.gov.</p>
+            문제 사항: <input type="text" size="30"><br>
+            자세한 내용: <textarea>
+
+            </textarea><input type="subm" name="" id="">
+
+          </li>
+        </li>
+        <li class="list-group-item list-group-item-primary" onclick="clickBtn()">
+          <label for="radio-3">연구소 통계&nbsp;&nbsp;V</label>
+          <li class="list-group-item list-group-item-light" id="list3">
+            <h3>What is Oracle Code One?</h3>
+            <p>Oracle Code One is the ultimate developer event where we will cover the technologies and programming
+              languages developers have come to love over the years. Expect talks on Go, Rust, Python, JavaScript, and R
+              and SQL along with more of the latest Java technical content.</p>
+          </li>
+        </li>
+        <li class="list-group-item list-group-item-primary" onclick="clickBtn()">
+          <label for="radio-4">현재 접속 중인 회원&nbsp;&nbsp;V</label>
+          <li class="list-group-item list-group-item-light" id="list4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque
+              hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum.
+              Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
+            </li>
+        </li>
+      </ul>
+    </li>
+  </div>
+
+  <div>
+    <table class="table">
+      <button type="button" class="btn btn-primary mr-3">
+        공지사항 <span class="badge badge-light">4</span>
+      </button>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa saepe nisi quaerat voluptate sunt sit fugiat soluta voluptatibus maxime sapiente autem tempore ex quam, neque tempora consequuntur quidem debitis! Consectetur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo reiciendis nulla quos enim distinctio ipsum ipsam, et provident laboriosam quibusdam dignissimos ullam non quis accusantium modi maiores. Dolorem, sunt nulla!<br><br>
+      </div><hr>
+  
+      <button type="button" class="btn btn-primary mr-3">
+        베스트 연구원 <span class="badge badge-light">4</span>
+      </button>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ullam ipsum dolorem soluta delectus minima placeat quasi et, labore perspiciatis vitae laudantium veniam commodi fugiat dolores, modi quae odit iste?<br><br>
+      </div><hr>
+      <button type="button" class="btn btn-primary mr-3">
+        트위터 <span class="badge badge-light">4</span>
+      </button>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ullam ipsum dolorem soluta delectus minima placeat quasi et, labore perspiciatis vitae laudantium veniam commodi fugiat dolores, modi quae odit iste?<br>
+        <a href="#">트위터로 이동</a>
+      </div><hr>
     </table>
+  </div>
+  
 </body>
+
 </html>
