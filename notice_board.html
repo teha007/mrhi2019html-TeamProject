@@ -13,43 +13,61 @@
 
 <body>
 
-    <table class="table table-primary table-bordered m-3">
-        <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>날짜</th>
-                <th>조회수</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>165</td>
-                <td>이제 곧 Bootstrap 4가 나온다면서요?</td>
-                <td>길라임</td>
-                <td>2016.12.02</td>
-                <td>2</td>
-            </tr>
+    <div class="container">
+        <table class="table table-bordered table-hover m-2">
+            <thead>
+                <tr>
+                    <th colspan="5">공지사항</th>
+                </tr>
+            </thead>
 
-            <tr>
-                <td>164</td>
-                <td>Bootstrap 강좌입니다.</td>
-                <td>관리자</td>
-                <td>2016.12.01</td>
-                <td>10</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성자</td>
+                    <td>날짜</td>
+                    <td>조회수</td>
+                </tr>
 
-            <tr>
-                <td>163</td>
-                <td>2016년을 지나 2017년 새해로.</td>
-                <td>뚱이</td>
-                <td>2016.11.30</td>
-                <td>4</td>
-            </tr>
-        </tbody>
-    </table>
+                <tr>
+                    <td>165</td>
+                    <td>이제 곧 Bootstrap 4가 나온다면서요?</td>
+                    <td>길라임</td>
+                    <td>2016.12.02</td>
+                    <td>2</td>
+                </tr>
 
+                <tr>
+                    <td>164</td>
+                    <td>Bootstrap 강좌입니다.</td>
+                    <td>관리자</td>
+                    <td>2016.12.01</td>
+                    <td>10</td>
+                </tr>
+
+                <tr>
+                    <td>163</td>
+                    <td>2016년을 지나 2017년 새해로.</td>
+                    <td>뚱이</td>
+                    <td>2016.11.30</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <a class="btn btn-default">글쓰기</a>
+
+        <div class="text-center">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>
