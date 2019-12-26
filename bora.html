@@ -18,102 +18,208 @@
   <script src=""></script>
 
   <style>
-    #list1, #list2, #list3, #list4 {
-      visibility: collapse;
-    }
+  .accordion {
+    font-family:Arial, Helvetica, sans-serif; 
+    margin:0 auto;
+    font-size:15px;
+    border:1px solid cornflowerblue;
+    border-radius:10px;
+    width:600px;
+    padding:10px;
+    background:#fff;
+  }
+  .accordion ul {
+      list-style:none;
+      margin:0;
+      padding:0;    
+  }
+  .accordion li {
+      margin:0;
+      padding:0;
+  }
+  .accordion [type=radio], .accordion [type=checkbox] {
+      display:none;
+  }
+  .accordion label {
+      display:block;
+      font-size:30px;
+      line-height:16px;
+      background:cornflowerblue;
+      border:1px solid cornflowerblue;
+      color:#333;
+      text-shadow:1px 1px 1px rgba(255,255,255,0.3);
+      font-weight:700;
+      cursor:pointer;
+      text-transform:uppercase;
+      -webkit-transition: all .2s ease-out;
+      -moz-transition: all .2s ease-out;
+  }
+  .accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
+      background:cornflowerblue;
+      color:#FFF;
+      text-shadow:1px 1px 1px rgba(0,0,0,0.5)
+  }
+  .accordion .content {
+      padding:0 10px;
+      overflow:hidden;
+      border:1px solid #fff;
+      -webkit-transition: all .5s ease-out;
+      -moz-transition: all .5s ease-out;
+  }
+  .accordion p {
+      color:#333;
+      margin:0 0 10px;
+  }
+  .accordion h3 {
+      color:#333;
+      padding:0;
+      margin:10px 0;
+  }
+
+
+  /* Vertical */
+  .vertical ul li {
+      overflow:hidden;
+      margin:0 0 1px;
+  }
+  .vertical ul li label {
+      padding:10px;
+  }
+  .vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
+      border-bottom:0;
+  }
+  .vertical ul li label:hover {
+      border:1px solid cornflowerblue;
+  }
+  .vertical ul li .content {
+      height:0px;
+      border-top:0;
+  }
+  .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
+      height:auto;
+      border:1px solid cornflowerblue;
+  }
+
+  #main {
+    float: left;
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  #aside {
+    float: right;
+    width: 20%;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  body {
+    display: table;
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  h5 {
+    margin: 1em 1em;
+  }
   </style>
 
   <script>
-    function toggle_submenu(element)
-      {
-        // 개체가 존재한다면 다음 작업을 수행한다.
-        if ( element != null )
-        {
-          // 보임 상태라면 숨김 상태로, 숨김 상태라면 보임 상태로 전환한다.
-          ( element.style.display != "none" ) ? element.style.display = "none" : element.style.display = "";
-        }
-
-        // 함수 작업을 명시적으로 종료한다.
-        return;
-      }
+    function scrollLink(obj){
+      var position = $("#"+obj).offset();
+      $('html, body').animate({scrollTop : position.top}, 2000);
+  }
   </script>
-
 </head>
 
-<body>
-  <div class="">
-      <ul class="list-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          <label for="radio-1">연구 공간&nbsp;&nbsp;V</label>
-          <div class="dropdown-menu">
-            <h3>공지 및 업데이트</h3>
-            <p>java의 최근 소식을 전해 드립니다.</p>
+<body onload="scrollLink()">
+  <img src="https://dbscthumb-phinf.pstatic.net/4874_000_1/20170502190804493_5QKHFU8SI.jpg/ka39_117_i1.jpg?type=w530_fst&wm=N" width="300px">
+  <div class="accordion vertical" id="main">
+  <ul>
+      <li>
+          <input type="checkbox" id="checkbox-1" name="checkbox-accordion" />
+          <label for="checkbox-1">연구 공간</label>
+          <div class="content">
+              <h5 style="color: blueviolet;">자바와 자바스크립트의 차이점</h5 style="color: blueviolet;"><hr>
+              <p>
+                객체 지향 프로그래밍 언어로서 보안성이 뛰어나며 컴파일한 코드는 다른 운영 체제에서 사용할 수 있도록 클래스(class)로 제공된다. 객체 지향 언어인 C++ 언어의 객체 지향적인 장점을 살리면서 분산 환경을 지원하며 더욱 효율적이다.
+                [네이버 지식백과] 자바 [Java] (컴퓨터인터넷IT용어대사전, 2011. 1. 20., 전산용어사전편찬위원회)</p>
           </div>
-        </button>
-        <li class="list-group-item list-group-item-primary">
-          <label for="radio-2">문제 해결&nbsp;&nbsp;V</label>
-          <li class="list-group-item list-group-item-light" id="list2">
-            <h3>I am not an Oracle employee and need a visa to enter the United States to attend the Oracle Code One
-              event. What does Oracle provide in this regard?</h3>
-            <p>A statement confirming registration and your planned attendance is available upon completion of the
-              registration process, and after providing all required information. You are responsible for complying with
-              all applicable US immigration laws, and should consult with your own employer or other resources regarding
-              questions about US visas and requirements. For information on US embassies and US consulates:
-              https://www.usembassy.gov.</p>
-            문제 사항: <input type="text" size="30"><br>
-            자세한 내용: <textarea>
+      </li>
+      <li>
+          <input type="checkbox" id="checkbox-2" name="checkbox-accordion" />
+          <label for="checkbox-2">문제 해결</label>
+          <div class="content">
+              <h5 style="color: blueviolet;">자바와 자바스크립트의 차이점</h5 style="color: blueviolet;"><hr>
+              <p>① 자바스크립트는 사용자 컴퓨터에 의해 인터프리트(interpreted)되는 언어이다(마치 HTML과 같이). 그러나 자바는 일단 서버측에서 컴파일해야 하고, 프로그램의 실행은 사용자측에서 이루어진다.
+                ② 두 언어 모두 객체 지향적 언어이다. 하지만 자바스크립트에는 상속성이나 클래스는 존재하지 않는다.
+                ③ 자바스크립트는 HTML 코드에 끼워져서(embedded)사용되지만 자바는 HTML과 독립적으로 사용 가능하다. 단, HTML을 이용해야 자바 프로그램에 접근할 수 있다.
+                ④ 흔히 루즈 타입(loose type)이라는 변수형을 선언할 필요가 없다. 반면에 자바는 항상 변수형을 선언해야 한다. 이 경우 스트롱 타입(strong type)이라 한다.
+                ⑤ 자바스크립트는 동적 연결(dynamic binding)이기 때문에 객체에 대한 참조는 실행시에만 한다. 그러나 정적인 연결(static binding)을 취하는 자바는 컴파일시에 객체에 대한 참조가 이루어진다.
+                ⑥ 두 언어 모두 안전하다. 그러나 자바스크립트의 경우는 HTML 코드에 직접 끼워져 있기 때문에 누구든지 볼 수가 있다. 그러나 자바의 경우는 다르다. 자바 소스 코드를 컴파일하면 바이트 코드로 불리는 클래스 파일이 생성된다. 따라서 프로그램 작성자가 디렉토리 안에 소스 코드를 지워도 HTML에서 부르는 것은 자바 클래스 파일이기 때문에 다른 사람이 그 소스를 보지 못한다는 점에서 차이가 있다.
+                [네이버 지식백과] 자바 [Java] (컴퓨터인터넷IT용어대사전, 2011. 1. 20., 전산용어사전편찬위원회)</p>
+          </div>
+      </li>
+      <li>
+          <input type="checkbox" id="checkbox-3" name="checkbox-accordion" />
+          <label for="checkbox-3">연구소 통계</label>
+          <div class="content">
+              <h5 style="color: blueviolet;">프로그래밍 언어 순위</h5><hr>
+              <p>엔지니어들이 가장 선호하는 프로그래밍 언어 1위는 파이썬인 것으로 조사됐다.
+                미국 국제전기전자기술자협회(IEEE)가 발간하는 공학 및 응용과학 전문지 IEEE스펙트럼은 9일(현지시간) '세계 프로그래밍 언어 순위 2019'를 발표했다.
+                IEEE는 일반적인 리스트보다 광범위한 출처를 기반으로 했으며, 회원들의 필요성에 따라 별도로 가중치를 부여했다고 밝혔다. 따라서 깃허브 저장소나 스택오버플로의 질문수에서 언급된 빈도와는 차이가 있을 수 있다는 설명이다.
+                미국 IT전문매체 테크리퍼블릭은 조사 결과에 대해 "파이썬은 전통적으로 많이 쓰이는 상위 다섯 개 언어를 제치고 급성장해 1위를 차지하긴 했지만, 보통은 유리한 위치에 있는 언어는 아니다"라고 분석했다.
+                IEEE스펙트럼은 파이썬의 급격한 성장이 최근 몇 년 간 빠르게 성장한 머신러닝 분야에서의 사용자 증가 덕분이라고 분석했다. 넘피(NumPy), 판다스(Pandas), 케라스(Keras) 및 기타 머신러닝 툴과 라이브러리에서 사용하기 쉽다는 이유도 한몫했다.
+                2위는 자바가 차지했다. 자바는 기업 종사자들과 안드로이드 개발자들이 가장 선호하는 언어로 알려져 있다. 3위와 4위는 각각 C와 C++가 차지했다. 테크리퍼블릭은 "다른 리스트보다 IEEE스펙트럼의 리스트는 C와 C++의 순위를 높게 책정했다"며 "IEEE스펙트럼 회원들이 해당 프로그래밍 언어와 관련이 높기 때문일 것"으로 추정했다.
+                이어 5위를 차지한 R에 대해서도 "머신러닝 엔지니어와 데이터 사이언티스트들에 대한 수요 증가가 영향을 미쳤을 것"으로 분석했다.
+                일반적으로 프로그래밍 언어 인기순위 1위를 차지하는 자바스크립트는 이번 순위에서 6위로 조사됐다. 이는 IEEE스펙트럼의 조사가 다른 조사기관의 조사보다 공학 쪽에 더 가중치를 두고 있음을 반영한다.
+                과거 개발자들은 자바스크립트가 광범위하게 사용된다는 사실이 곧 프로그래머들이 자바스크립트를 좋아한다는 사실과 같은 것은 아니라고 강조했다. 자바스크립트가 웹 개발 환경을 지배하고 있기 때문에 많은 개발자들이 어쩔 수 없이 자바스크립트를 쓸 수밖에 없다는 것이다.<br>
+                이외에도 상위 10위 내에는 마이크로소프트(MS)의 C#, 매트랩(MATLAB), 애플의 스위프트(Swift) 등이 포함됐다.<br>
+                [출처] 엔지니어가 가장 선호하는 프로그래밍 언어 1위는 '파이썬' (돌 프로그래밍 카페 (개발자, 프리랜서, IT 프로그래머의 모임)) |작성자 돌</p>
+          </div>
+      </li>
+      <li>
+          <input type="checkbox" id="checkbox-4" name="checkbox-accordion" />
+          <label for="checkbox-4">현재 접속 중인 회원</label><hr>
+          <div class="content">
+            <h5 style="color: #333;">명란젓 코난, 반지하의 제왕, 추적 60인분, 미션임파선염, 카드값줘체리, 난 앓아요, 아프리카 청춘이다, <br>
+                니 이모를 찾아서, 달려야 하니, 짱구는 옷말려, 사돈어택, 바람과 함께 살빠지다, 니콜키크드만, 백마탄환자, 안졸리나 졸리</h5>
+          </div>
+      </li>
+  </ul>
+</div>
 
-            </textarea><input type="subm" name="" id="">
-
-          </li>
-        </li>
-        <li class="list-group-item list-group-item-primary" onclick="clickBtn()">
-          <label for="radio-3">연구소 통계&nbsp;&nbsp;V</label>
-          <li class="list-group-item list-group-item-light" id="list3">
-            <h3>What is Oracle Code One?</h3>
-            <p>Oracle Code One is the ultimate developer event where we will cover the technologies and programming
-              languages developers have come to love over the years. Expect talks on Go, Rust, Python, JavaScript, and R
-              and SQL along with more of the latest Java technical content.</p>
-          </li>
-        </li>
-        <li class="list-group-item list-group-item-primary" onclick="clickBtn()">
-          <label for="radio-4">현재 접속 중인 회원&nbsp;&nbsp;V</label>
-          <li class="list-group-item list-group-item-light" id="list4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque
-              hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum.
-              Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
-            </li>
-        </li>
-      </ul>
-    </li>
+<div id="aside" style="border: 1px solid #ccc;">
+  <div>
+    <img src="https://cdn1.iconfinder.com/data/icons/twitter-ui-colored/48/JD-23-512.png" alt="" width="50px">
+    <h2>공지 사항</h2><hr>
+    <p>선마이크로시스템즈의 제임스 고슬링이 1991년 C 언어를 기반으로 연구하기 시작했다. 가전제품의 자동화를 구현(인공지능, 퍼지 등)하기 위해 어떠한 CPU 칩에서도 작동할 수 있고, 네트워크로 연결해 통제할 수 있는 프로그램 언어를 만든다는 취지에서였다. 처음 명칭은 오크(Oak)였다. Oak는 결국 실패했지만 플랫폼의 독립적인 기능이 인터넷의 기능과 조화를 이룬다는 점을 밝혀져 Java라는 이름으로 개칭되면서 인터넷 프로그램으로 자리잡게 되었다.<br>
+      완성된 Java는 1993년 양방향 TV(Interactive TV)에 적용되었다. 기존의 월드 와이드 웹 서비스가 가지고 있던 한계 극복의 필요성, 호환이 잘되고 간단한 정제된 언어의 필요성, 그리고 사용자와 상호 대화가 가능한 기능 요소의 필요성 때문에 고안된 3세대 언어이다.
+      [네이버 지식백과] 자바 프로그래밍 언어 [Java] (손에 잡히는 IT 시사용어, 2008.02.01)</p><hr>
   </div>
 
   <div>
-    <table class="table">
-      <button type="button" class="btn btn-primary mr-3">
-        공지사항 <span class="badge badge-light">4</span>
-      </button>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa saepe nisi quaerat voluptate sunt sit fugiat soluta voluptatibus maxime sapiente autem tempore ex quam, neque tempora consequuntur quidem debitis! Consectetur.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo reiciendis nulla quos enim distinctio ipsum ipsam, et provident laboriosam quibusdam dignissimos ullam non quis accusantium modi maiores. Dolorem, sunt nulla!<br><br>
-      </div><hr>
-  
-      <button type="button" class="btn btn-primary mr-3">
-        베스트 연구원 <span class="badge badge-light">4</span>
-      </button>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ullam ipsum dolorem soluta delectus minima placeat quasi et, labore perspiciatis vitae laudantium veniam commodi fugiat dolores, modi quae odit iste?<br><br>
-      </div><hr>
-      <button type="button" class="btn btn-primary mr-3">
-        트위터 <span class="badge badge-light">4</span>
-      </button>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ullam ipsum dolorem soluta delectus minima placeat quasi et, labore perspiciatis vitae laudantium veniam commodi fugiat dolores, modi quae odit iste?<br>
-        <a href="#">트위터로 이동</a>
-      </div><hr>
-    </table>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxEZHsBLihacDhRZcaTu8kyJr2oS4AU0MaX0cF8fkYXHncjV-1&s" alt="" width="50px">
+    <h2>베스트 연구원</h2><hr>
+    <p>1. 명란젓 코난<br>
+      2. 반지하의 제왕<br>
+      3. 추적 60인분<br>
+      4. 미션임파선염<br>
+      5. 카드값줘체리</p><hr>
   </div>
-  
+
+  <div>
+    <img src="data:image/png;base64,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" alt="" width="30px">
+    <h2>트위터</h2><hr>
+    <p><a href="https://twitter.com/" target="_blank">트위터로 이동</a></p>
+  </div>
+</div>
+
 </body>
 
 </html>
