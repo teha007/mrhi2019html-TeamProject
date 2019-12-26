@@ -1,264 +1,270 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>안드로이드웹앱 7회차</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>안드로이드웹앱 7회차</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+        <script src="./js/index.js"></script>
 
-    <!-- Favicons -->
-    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
-    <link href="./css/index.css" rel="stylesheet">
-  </head>
-  <body>
+        <!-- Favicons -->
+        <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+        <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+        <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+        <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#563d7c">
+        <link href="./css/index.css" rel="stylesheet">
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2AWD6VCBMR_NX9PUc7TjSuRNSZIP0Wm0&callback=initMap">
+        </script>
+    </head>
+    <body onload="loaded()">
 
-    <header class="mb-0">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#"><img src="./resource/logo_mrhi.png" width="170px" alt="" class="d-inline-block align-middle mr-2"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">C언어</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">자바</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">안드로이드</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">HTML</a>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                      <a href="dropdown" class="dropdown nav-link" data-toggle="dropdown"> 팀원소개</a>
-                      <div class="dropdown-menu">
-                        <h5 class="dropdown-header">팀원소개</h5>
-                        <a class="dropdown-item" href="#">연승용</a>
-                        <a class="dropdown-item" href="#">조상호</a>
-                        <a class="dropdown-item" href="#">안석근</a>
-                        <a class="dropdown-item" href="#">정보라</a>
-                        <h5 class="dropdown-header">---------------</h5>
-                        <a class="dropdown-item" href="#">미래교육원</a>
-                      </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">관리자</a>
-                </li>
-              </ul>
-              <form class="form-inline mt-2 mt-md-0">
-                <a class="btn btn-primary mr-2" href="./login.html">로그인</a>
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-              </form>
+        <header class="mb-0">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#"><img src="./resource/logo_mrhi.png" width="170px" alt="" class="d-inline-block align-middle mr-2"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="">C언어</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="">자바</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="">안드로이드</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                        <a href="dropdown" class="dropdown nav-link" data-toggle="dropdown"> 팀원소개</a>
+                        <div class="dropdown-menu">
+                            <h5 class="dropdown-header">팀원소개</h5>
+                            <a class="dropdown-item" href="#">연승용</a>
+                            <a class="dropdown-item" href="#">조상호</a>
+                            <a class="dropdown-item" href="#">안석근</a>
+                            <a class="dropdown-item" href="#">정보라</a>
+                            <h5 class="dropdown-header">---------------</h5>
+                            <a class="dropdown-item" href="#">미래교육원</a>
+                        </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">관리자</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a class="btn btn-primary mr-2" href="./login.html">로그인</a>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                </div>
+            </nav>
+
+        <div id="myCarousel" class="carousel slide container pl-5 pr-5" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner"width="100%"> 
+            <div class="carousel-item active">
+                <img src="./resource/trailer_main1.png" alt="trailer_main1">
+                <svg class="bd-placeholder-img"xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
             </div>
-          </nav>
-
-      <div id="myCarousel" class="carousel slide container pl-5 pr-5" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner"width="100%"> 
-          <div class="carousel-item active">
-            <img src="./resource/trailer_main1.png" alt="trailer_main1">
-            <svg class="bd-placeholder-img"xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-          </div>
-          <div class="carousel-item">
-            <img src="./resource/trailer_main2.png" alt="trailer_main2">
-            <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-          </div>
-          <div class="carousel-item">
-            <img src="./resource/logo_mrhi.png" alt="logo_mrhi">
-            <svg class="bd-placeholder-img" mlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-          </div>
+            <div class="carousel-item">
+                <img src="./resource/trailer_main2.png" alt="trailer_main2">
+                <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            </div>
+            <div class="carousel-item">
+                <img src="./resource/logo_mrhi.png" alt="logo_mrhi">
+                <svg class="bd-placeholder-img" mlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </header>
+        </header>
 
-    <div class="container mt-3">
+        <div class="container">
 
-      <article>
-          
-        <div class="container mb-5" style="text-align: center;">
-            <img src="./resource/lesson_prof.png" alt="">
-          </div>
+        <article>
+            
+            <div class="container mb-5" style="text-align: center;">
+                <img src="./resource/lesson_prof.png" alt="">
+            </div>
+
+            <div id="map" class="container"></div>
 
 
-          <section class="bar no-mb">
+            <section class="bar no-mb">
             <div class="container">
-              <div class="col-md-12">
+                <div class="col-md-12">
                 <div class="heading" style="text-align: center;">
-                  <h2>팀원소개</h2>
+                    <h2>팀원소개</h2>
                 </div>
                 <div class="row text-center mt-3">
-                  <div class="col-md-3">
+                    <div class="col-md-3">
                     <div data-animate="fadeInUp" class="team-member">
-                      <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
-                      <h3><a href="team-member.html">연승용</a></h3>
-                      <p class="role">조장</p>
-                      <div class="text">
+                        <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
+                        <h3><a href="team-member.html">연승용</a></h3>
+                        <p class="role">조장</p>
+                        <div class="text">
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                      </div>
+                        </div>
                     </div>
-                  </div>
-                  <!-- /.team-member-->
-                  <div data-animate="fadeInUp" class="col-md-3">
+                    </div>
+                    <!-- /.team-member-->
+                    <div data-animate="fadeInUp" class="col-md-3">
                     <div class="team-member">
-                      <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
-                      <h3><a href="team-member.html">조상호</a></h3>
-                      <p class="role">CTO</p>
-                      <div class="text">
+                        <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
+                        <h3><a href="team-member.html">조상호</a></h3>
+                        <p class="role">CTO</p>
+                        <div class="text">
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                      </div>
+                        </div>
                     </div>
-                  </div>
-                  <!-- /.team-member-->
-                  <div data-animate="fadeInUp" class="col-md-3">
+                    </div>
+                    <!-- /.team-member-->
+                    <div data-animate="fadeInUp" class="col-md-3">
                     <div class="team-member">
-                      <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
-                      <h3><a href="team-member.html">안석근</a></h3>
-                      <p class="role">Team Leader</p>
-                      <div class="text">
+                        <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
+                        <h3><a href="team-member.html">안석근</a></h3>
+                        <p class="role">Team Leader</p>
+                        <div class="text">
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                      </div>
+                        </div>
                     </div>
-                  </div>
-                  <!-- /.team-member-->
-                  <div data-animate="fadeInUp" class="col-md-3">
+                    </div>
+                    <!-- /.team-member-->
+                    <div data-animate="fadeInUp" class="col-md-3">
                     <div class="team-member">
-                      <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
-                      <h3><a href="team-member.html">정보라</a></h3>
-                      <p class="role">Lead Developer</p>
-                      <div class="text">
+                        <div class="image"><a href="team-member.html"><img src="./resource/parrot.png" alt="" class="img-fluid rounded-circle"></a></div>
+                        <h3><a href="team-member.html">정보라</a></h3>
+                        <p class="role">Lead Developer</p>
+                        <div class="text">
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                      </div>
+                        </div>
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </div>
+                </div>
             </div>
-          </section>
+            </section>
 
 
-          <section class="bar pr5" id="program">
+            <section class="bar pr5" id="program">
             <div class="row">
-              <div class="col-md-12">
+                <div class="col-md-12">
                 <div class="heading">
-                  <h2>우리가 배운것</h2>
+                    <h2>우리가 배운것</h2>
                 </div>
                 <p class="lead">Yielding, they're air. Land replenish spirit given gathered subdue, day Blessed you'll great created, lights a one light, blessed deep morning, appear our. Fruit multiply, creeping first image. Upon saw isn't male winged to replenish tree and.</p>
-              </div>
+                </div>
             </div>
             <div class="row services text-center">
-              <div class="col-md-4 border border-success rounded">
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_c-.png"></img>
-                  <h3 class="h4">c/c++</h3>
-                  <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
+                    <img class="img-fluid" src="./resource/program_c-.png"></img>
+                    <h3 class="h4">c/c++</h3>
+                    <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
                 </div>
-              </div>
-              <div class="col-md-4 border border-success rounded">
+                </div>
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_java-.png"></img>
-                  <h3 class="h4">java</h3>
-                  <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
+                    <img class="img-fluid" src="./resource/program_java-.png"></img>
+                    <h3 class="h4">java</h3>
+                    <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
                 </div>
-              </div>
-              <div class="col-md-4 border border-success rounded">
+                </div>
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_eclipse-.png"></img>
-                  <h3 class="h4">eclipse</h3>
-                  <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
+                    <img class="img-fluid" src="./resource/program_eclipse-.png"></img>
+                    <h3 class="h4">eclipse</h3>
+                    <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
                 </div>
-              </div>
+                </div>
             </div>
             <div class="row services text-center">
-              <div class="col-md-4 border border-success rounded">
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_android-.png"></img>
-                  <h3 class="h4">Android</h3>
-                  <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
+                    <img class="img-fluid" src="./resource/program_android-.png"></img>
+                    <h3 class="h4">Android</h3>
+                    <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
                 </div>
-              </div>
-              <div class="col-md-4 border border-success rounded">
+                </div>
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_androidstudio-.png"></img>
-                  <h3 class="h4">Android Studio</h3>
-                  <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
+                    <img class="img-fluid" src="./resource/program_androidstudio-.png"></img>
+                    <h3 class="h4">Android Studio</h3>
+                    <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
                 </div>
-              </div>
-              <div class="col-md-4 border border-success rounded">
+                </div>
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_git-.png"></img>
-                  <h3 class="h4">Git</h3>
-                  <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
+                    <img class="img-fluid" src="./resource/program_git-.png"></img>
+                    <h3 class="h4">Git</h3>
+                    <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
                 </div>
-              </div>
+                </div>
             </div>
             <div class="row services text-center">
-              <div class="col-md-4 border border-success rounded">
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_html-.png"></img>
-                  <h3 class="h4">web</h3>
-                  <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
+                    <img class="img-fluid" src="./resource/program_html-.png"></img>
+                    <h3 class="h4">web</h3>
+                    <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
                 </div>
-              </div>
-              <div class="col-md-4 border border-success rounded">
+                </div>
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_jquery-.png"></img>
-                  <h3 class="h4">JQuery</h3>
-                  <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
+                    <img class="img-fluid" src="./resource/program_jquery-.png"></img>
+                    <h3 class="h4">JQuery</h3>
+                    <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
                 </div>
-              </div>
-              <div class="col-md-4 border border-success rounded">
+                </div>
+                <div class="col-md-4 border border-success rounded">
                 <div class="box-simple">
-                  <img class="img-fluid" src="./resource/program_bootstrap-.png"></img>
-                  <h3 class="h4">bootstrap</h3>
-                  <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
+                    <img class="img-fluid" src="./resource/program_bootstrap-.png"></img>
+                    <h3 class="h4">bootstrap</h3>
+                    <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
                 </div>
-              </div>
+                </div>
             </div>
-          </section>
+            </section>
 
-          <!-- 37.562161,127.035199 -->
-          <!-- Brooklyn+Bridge,New+York,NY -->
-          <!-- &markers=color:blue%7Clabel:S%7C37.562161,127.035199 -->
-          <img width="650px" height="350px" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
-          &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
-          &markers=color:red%7Clabel:C%7C40.718217,-73.998284
-          &key=AIzaSyB2AWD6VCBMR_NX9PUc7TjSuRNSZIP0Wm0" alt="asdfq">
+            <!-- 37.562161,127.035199 -->
+            <!-- Brooklyn+Bridge,New+York,NY -->
+            <!-- &markers=color:blue%7Clabel:S%7C37.562161,127.035199 -->
+            <img width="650px" height="350px" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+            &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+            &markers=color:red%7Clabel:C%7C40.718217,-73.998284
+            &key=AIzaSyB2AWD6VCBMR_NX9PUc7TjSuRNSZIP0Wm0" alt="asdfq">
 
-          <img width="600" src="https://maps.googleapis.com/maps/api/staticmap?center=37.562161,127.035199&zoom=13&scale=1&size=600x300&maptype=roadmap&key=AIzaSyB2AWD6VCBMR_NX9PUc7TjSuRNSZIP0Wm0&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C37.562161,127.035199" alt="Google Map of 37.562161,127.035199">
-        
-      </article>
-    </div>
+            <img width="600" src="https://maps.googleapis.com/maps/api/staticmap?center=37.562161,127.035199&zoom=13&scale=1&size=600x300&maptype=roadmap&key=AIzaSyB2AWD6VCBMR_NX9PUc7TjSuRNSZIP0Wm0&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C37.562161,127.035199" alt="Google Map of 37.562161,127.035199">
+            
+        </article>
+        </div>
 
-</body>
+    </body>
 </html>
