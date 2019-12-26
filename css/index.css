@@ -179,3 +179,7 @@ body {
     display: table;
     text-align: center;
   }
+
+  article div p{
+    text-align: left;
+  }
