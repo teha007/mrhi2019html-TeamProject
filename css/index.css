@@ -183,3 +183,7 @@ body {
   article div p{
     text-align: left;
   }
+
+  article ul li{
+    padding-left: 5px;
+  }
