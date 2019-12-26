@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Carousel Template · Bootstrap</title>
+    <title>안드로이드웹앱 7회차</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -23,33 +23,53 @@
   <body>
 
     <header class="mb-0">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#"><img src="./resource/logo_mrhi.png" width="170px" alt="" class="d-inline-block align-middle mr-2"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://getbootstrap.com/">부트 스트랩</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.w3schools.com/bootstrap/">w3schools.com</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">관리자</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-primary mr-2" href="./login.html">로그인</a>
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"><img src="./resource/logo_mrhi.png" width="170px" alt="" class="d-inline-block align-middle mr-2"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">C언어</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">자바</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">안드로이드</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                      <a href="dropdown" class="dropdown nav-link" data-toggle="dropdown"> 팀원소개</a>
+                      <div class="dropdown-menu">
+                        <h5 class="dropdown-header">팀원소개</h5>
+                        <a class="dropdown-item" href="#">연승용</a>
+                        <a class="dropdown-item" href="#">조상호</a>
+                        <a class="dropdown-item" href="#">안석근</a>
+                        <a class="dropdown-item" href="#">정보라</a>
+                        <h5 class="dropdown-header">---------------</h5>
+                        <a class="dropdown-item" href="#">미래교육원</a>
+                      </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">관리자</a>
+                </li>
+              </ul>
+              <form class="form-inline mt-2 mt-md-0">
+                <a class="btn btn-primary mr-2" href="./login.html">로그인</a>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
 
       <div id="myCarousel" class="carousel slide container pl-5 pr-5" data-ride="carousel">
         <ol class="carousel-indicators">
