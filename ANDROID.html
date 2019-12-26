@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>안드로이드웹앱 7회차</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link href="./css/index.css" rel="stylesheet">
+
+    <style>
+        div.mt-3 {
+
+            width: 1070px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="mb-0">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"><img src="./resource/logo_mrhi.png" width="170px" alt=""
+                    class="d-inline-block align-middle mr-2"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">C언어</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">자바</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">안드로이드</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a href="dropdown" class="dropdown nav-link" data-toggle="dropdown"> 팀원소개</a>
+                            <div class="dropdown-menu">
+                                <h5 class="dropdown-header">팀원소개</h5>
+                                <a class="dropdown-item" href="#">연승용</a>
+                                <a class="dropdown-item" href="#">조상호</a>
+                                <a class="dropdown-item" href="#">안석근</a>
+                                <a class="dropdown-item" href="#">정보라</a>
+                                <h5 class="dropdown-header">---------------</h5>
+                                <a class="dropdown-item" href="#">미래교육원</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">관리자</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <a class="btn btn-primary mr-2" href="./login.html">로그인</a>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
+        <div id="myCarousel" class="carousel slide container pl-5 pr-5" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner table-bordered" width="100%">
+                <div class="carousel-item active">
+                    <img src="./resource/trailer_main1.png" alt="trailer_main1">
+                    <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                </div>
+                <div class="carousel-item table-bordered">
+                    <img src="./resource/trailer_main2.png" alt="trailer_main2">
+                    <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                </div>
+                <div class="carousel-item table-bordered">
+                    <img src="./resource/logo_mrhi.png" alt="logo_mrhi">
+                    <svg class="bd-placeholder-img" mlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="container mt-3">
+
+        <article>
+
+            <body>
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                개요
+                                <button name="accordion_menus" class="btn dropdown-toggle dropdown-toggle-split"
+                                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                안드로이드(영어: Android)는 휴대 전화를 비롯한 휴대용 장치를 위한 운영 체제와 미들웨어, 사용자 인터페이스 그리고 표준 응용 프로그램(웹 브라우저,
+                                이메일 클라이언트, 단문 메시지 서비스(SMS), 멀티미디어 메시지 서비스(MMS)등)을 포함하고 있는 소프트웨어 스택이자 모바일 운영 체제이다. 안드로이드는
+                                개발자들이 자바와 코틀린 언어로 응용 프로그램을 작성할 수 있게 하였으며, 컴파일된 바이트코드를 구동할 수 있는 런타임 라이브러리를 제공한다. 또한
+                                안드로이드 소프트웨어 개발 키트(SDK)를 통해 응용 프로그램을 개발하는 데 필요한 각종 도구와 응용 프로그램 인터페이스(API)를 제공한다.
+
+                                안드로이드는 리눅스 커널 위에서 동작하며, 자바와 코틀린으로 앱을 만들어 동작한다. 또한 다양한 안드로이드 시스템 구성 요소에서 사용되는 C/C++
+                                라이브러리들을 포함하고 있다. 안드로이드는 기존의 자바 가상 머신과는 다른 가상 머신인 안드로이드 런타임을 통해 자바와 코틀린으로 작성된 응용 프로그램을
+                                별도의 프로세스에서 실행하는 구조로 되어 있다.
+
+                                2005년에 안드로이드 사를 구글에서 인수한 후 2007년 11월에 안드로이드 플랫폼을 휴대용 장치 운영 체제로서 무료 공개한다고 발표한 후 48개의
+                                하드웨어, 소프트웨어, 통신 회사가 모여 만든 오픈 핸드셋 얼라이언스(Open Handset Aliance, OHA)에서 공개 표준을 위해 개발하고 있다.
+                                구글은 안드로이드의 모든 소스 코드를 오픈 소스 라이선스인 아파치 v2 라이선스로 배포하고 있어 기업이나 사용자는 각자 안드로이드 프로그램을 독자적으로 개발을
+                                해서 탑재할 수 있다. 또한 등록한 개발자들이 소비자에게 응용 프로그램을 판매할 수 있는 구글 플레이를 제공하고 있으며, 이와 별도로 각 제조사 혹은 통신사별
+                                응용 프로그램 마켓이 함께 운영되고 있다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">역사
+                                <button class="btn dropdown-toggle dropdown-toggle-split" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false">
+
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                2005년 7월에 구글은 미국 캘리포니아주의 팔로알토에 위치한 작은 안드로이드사를 인수하였다. 안드로이드사는 앤디 루빈이 세운 업체이다.
+
+                                2007년 11월 5일에 텍사스 인스트루먼트, 브로드컴 코퍼레이션, 구글, HTC, 인텔, LG전자, 마벨 테크놀로지 그룹, 모토로라, 엔비디아, 퀄컴,
+                                삼성전자, 스프린트 넥스텔, T-모바일의 몇몇 회사로 구성된 컨소시엄인 오픈 핸드셋 얼라이언스(OHA)가 모바일 기기의 공개 표준을 개발하는 것을 목표로
+                                결성되었다. 또한 OHA는 리눅스 커널 2.6에서 빌드된 그들의 첫 번째 모바일 기기 플랫폼 결과물인 안드로이드를 발표하였다.
+
+                                2008년 10월 21일에 안드로이드가 오픈 소스로 선언되었다. 구글은 네트워크와 텔레폰 스택을 포함하는 완전한 소스 코드를 아파치 라이선스로 공개하였다.
+
+                                2008년 12월 9일에 ARM 홀딩스, 아세로스(Atheros Communications), 에이수스, 가르민, 소프트뱅크, 소니 에릭슨, 도시바,
+                                보다폰으로 구성된 새로운 14개의 멤버가 안드로이드 프로젝트에 참여하였다.
+
+                                2014년 10월 16일 안드로이드 5.0 버전 발표와 함께 기존의 달빅 가상 머신을 안드로이드 런타임으로 대체하였다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </body>
+
+
+        </article>
+    </div>
+
+</body>
+
+</html>
