@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>안드로이드웹앱 7회차</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link href="./css/index.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="mb-0">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"><img src="./resource/logo_mrhi.png" width="170px" alt="" class="d-inline-block align-middle mr-2"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">C언어</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">자바</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">안드로이드</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">HTML</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a href="dropdown" class="dropdown nav-link" data-toggle="dropdown"> 팀원소개</a>
+                <div class="dropdown-menu">
+                  <h5 class="dropdown-header">팀원소개</h5>
+                  <a class="dropdown-item" href="#">연승용</a>
+                  <a class="dropdown-item" href="#">조상호</a>
+                  <a class="dropdown-item" href="#">안석근</a>
+                  <a class="dropdown-item" href="#">정보라</a>
+                  <h5 class="dropdown-header">---------------</h5>
+                  <a class="dropdown-item" href="#">미래교육원</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">관리자</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <a class="btn btn-primary mr-2" href="./login.html">로그인</a>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div id="myCarousel" class="carousel slide container pl-5 pr-5" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner"width="100%"> 
+          <div class="carousel-item active">
+            <img src="./resource/trailer_main1.png" alt="trailer_main1">
+            <svg class="bd-placeholder-img"xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          </div>
+          <div class="carousel-item">
+            <img src="./resource/trailer_main2.png" alt="trailer_main2">
+            <svg class="bd-placeholder-img" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          </div>
+          <div class="carousel-item">
+            <img src="./resource/trailer_main3.png" alt="logo_mrhi">
+            <svg class="bd-placeholder-img" mlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="container mt-3">
+      <article>
+
+        <div class="accordion vertical" id="main">
+          <ul>
+            <li>
+              <input type="checkbox" id="checkbox-1" name="checkbox-accordion" checked/>
+              <label for="checkbox-1">언어 소개</label>
+              <div class="content">
+                <h5 style="color: blueviolet;" class="mt-3">안드로이드 언어 소개</h5 style="color: blueviolet;"><hr>
+                  <img src="./resource/program_android-.png" style="align-self: center;">
+                <p><strong>안드로이드</strong>
+                     (영어: Android)는 휴대 전화를 비롯한 휴대용 장치를 위한 운영 체제와 미들웨어, 사용자 인터페이스 그리고 표준 응용 프로그램(웹 브라우저, 이메일 클라이언트, 단문 메시지 서비스(SMS), 멀티미디어 메시지 서비스(MMS)등)을 포함하고 있는 소프트웨어 스택이자 모바일 운영 체제이다. 안드로이드는 개발자들이 자바 와 코틀린 언어로 응용 프로그램을 작성할 수 있게 하였으며, 컴파일된 바이트코드를 구동할 수 있는 런타임 라이브러리를 제공한다. 또한 안드로이드 소프트웨어 개발 키트(SDK)를 통해 응용 프로그램을 개발하는 데 필요한 각종 도구와 응용 프로그램 인터페이스(API)를 제공한다.
+                    안드로이드는 리눅스 커널 위에서 동작하며, 자바와 코틀린으로 앱을 만들어 동작한다. 또한 다양한 안드로이드 시스템 구성 요소에서 사용되는 C/C++ 라이브러리들을 포함하고 있다. 안드로이드는 기존의 자바 가상 머신과는 다른 가상 머신인 안드로이드 런타임을 통해 자바와 코틀린으로 작성된 응용 프로그램을 별도의 프로세스에서 실행하는 구조로 되어 있다.
+                    2005년에 안드로이드 사를 구글에서 인수한 후 2007년 11월에 안드로이드 플랫폼을 휴대용 장치 운영 체제로서 무료 공개한다고 발표한 후 48개의 하드웨어, 소프트웨어, 통신 회사가 모여 만든 오픈 핸드셋 얼라이언스(Open Handset Aliance, OHA)에서 공개 표준을 위해 개발하고 있다. 구글은 안드로이드의 모든 소스 코드를 오픈 소스 라이선스인 아파치 v2 라이선스로 배포하고 있어 기업이나 사용자는 각자 안드로이드 프로그램을 독자적으로 개발을 해서 탑재할 수 있다. 또한 등록한 개발자들이 소비자에게 응용 프로그램을 판매할 수 있는 구글 플레이를 제공하고 있으며, 이와 별도로 각 제조사 혹은 통신사별 응용 프로그램 마켓이 함께 운영되고 있다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" id="checkbox-2" name="checkbox-accordion" />
+              <label for="checkbox-2">역사/발전과정</label>
+              <div class="content">
+                <h5 style="color: blueviolet;" class="mt-3">안드로이드의 역사/발전과정</h5 style="color: blueviolet;"><hr>
+                <p>
+                    2005년 7월에 구글은 미국 캘리포니아주의 팔로알토에 위치한 작은 안드로이드사를 인수하였다. 안드로이드사는 앤디 루빈이 세운 업체이다.
+                    2007년 11월 5일에 텍사스 인스트루먼트, 브로드컴 코퍼레이션, 구글, HTC, 인텔, LG전자, 마벨 테크놀로지 그룹, 모토로라, 엔비디아, 퀄컴, 삼성전자, 스프린트 넥스텔, T-모바일의 몇몇 회사로 구성된 컨소시엄인 오픈 핸드셋 얼라이언스(OHA)가 모바일 기기의 공개 표준을 개발하는 것을 목표로 결성되었다.[1] 또한 OHA는 리눅스 커널 2.6에서 빌드된 그들의 첫 번째 모바일 기기 플랫폼 결과물인 안드로이드를 발표하였다.
+                    2008년 10월 21일에 안드로이드가 오픈 소스로 선언되었다. 구글은 네트워크와 텔레폰 스택을 포함하는 완전한 소스 코드를 아파치 라이선스로 공개하였다.
+                    2008년 12월 9일에 ARM 홀딩스, 아세로스(Atheros Communications), 에이수스, 가르민, 소프트뱅크, 소니 에릭슨, 도시바, 보다폰으로 구성된 새로운 14개의 멤버가 안드로이드 프로젝트에 참여하였다.
+                    2014년 10월 16일 안드로이드 5.0 버전 발표와 함께 기존의 달빅 가상 머신을 안드로이드 런타임으로 대체하였다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" id="checkbox-3" name="checkbox-accordion" />
+              <label for="checkbox-3">언어만의 특징</label>
+              <div class="content">
+                <h5 style="color: blueviolet;" class="mt-3">안드로이드의 특징</h5><hr>
+                <img src="./resource/android_format3.png" width="70%" style="align-self: left;">
+                <h3><strong>안드로이드의 특징</strong></h3>
+                <p>
+                    1. 자바기반 : 안드로이드를 개발할 떄 사용하는 언어는 자바입니다. 따라서 전 세계의 많은 자바 개발자들이 안드로이드 앱 개발에 뛰어들 수 있었고 안드로이드가 빠르게 성장할 수 있는 계기가 되었습니다. <br>
+                    2. 오픈소스 : 안드로이드는 오픈소스를 기반으로 하고 있으며 아파치 2.0라이선스를 사용합니다.<br>
+                    3. 완벽한 컴포넌트 : 안드로이드는 오픈소스임에도 불구하고 스마트폰을 위한 완벽한 컴포넌트들을 제공합니다. 핵심적인 커널 부분만 제공하고 다른 부분들은 개발자에게 맡기는 방식이 아니라 제공된 소스를 사용하면 스마트폰이라는 전화기가 그대로 만들어지므로 대부분의 개발자들은 그 위에 올라가는 앱만 만들면 됩니다.<br>
+                    4. 높은 점유율 : 위에서 언급한 3가지를 주축으로 안드로이드는 빠르게 성장하여 애플의 IOS를 제치고 80%가 넘는 점유율을 가지게 되었으며 심지어 최근에는 Windows의 점유율마저 넘어섰다는 보도가 나오고 있습니다.<br>
+                    5. 높은 이식성 : 안드로이드는 리눅스를 기반으로 높은 이식성을 가지고 있으며 새로운 하드웨어의 기능을 쉽게 연동할 수 있습니다. 모바일 뿐만이 아니라 태블릿, PMP 등의 각종 통신 기기에 사용될 수 있습니다. 나아가 가전 기기 심지어는 자동차까지도 적용할 수 있는 연동성을 갖추어 인베디드시스템의 새로운 패러다임을 제시하고 있습니다.<br>
+                    6. 쉬운연동 : 안드로이드로 만든 앱은 다른 앱에서 제공하는 기능을 쉽게 사용할 수 있도록 만들어져 있습니다. 사진을 찍기 위해 단말의 사진 앱을 연동하면 카메라 미리보기 화면을 직접 만들지 않아도 됩니다.<br>
+
+                    <br><hr><br>
+                    안드로이드는 여러 주체에 의해 공동으로 개발된 공개 운영체제여서 다른 모바일 OS와는 다른 고유한 특징이 있다. 이 특징은 주로 안드로이드의 태생에 기인하며 이를 이해하면 안드로이드의 장점과 한계에 대해 감을 잡을 수 있다.<br>
+                    
+                    1. 운영체제의 핵심인 커널은 공개 운영체제인 리눅스에 기반한다. 리눅스는 상당히 오랜 기간 개발 및 관리된 커널이어서 정교한 메모리 관리, 안정적인 멀티 스레드, 엄격한 보안 등의 고급 기능을 공짜로 사용할 수 있다. 안드로이드는 리눅스를 모바일 환경에 맞게 개조하여 핸드폰에 어울리지 않는 크고 무거운 기능은 제거하고 알람, 디버거 등의 기능을 추가하여 만든 것이다.<br>
+                    2. 공식적으로 자바 언어를 사용한다. 고수준 언어인 자바는 생산성이 높으며 하드웨어 추상층을 제공하여 전문 지식이 없어도 개발 가능하다. 다란 고급 언어이다 보니 성능이나 섬세함은 다소 부족하다. C로 개발할 수 있는 NDK가 발표되어 있고 더 많은 부분에 네이티브 언어를 쓸 수 있도록 개선되고 있다.<br>
+                    3. 검증된 많은 라이브러리를 대거 포함하고 있어 웬만한 기능은 별도의 외부 라이브러리를 사용할 필요가 없다. 자바가 언어 차원에서 제공하는 라이브러리 외에도 OpenGL, SQLite, FreeType 등의 써드 파티 라이브러리까지 오픈 소스 중에 쓸만한 것을 모두 집대성해 놓은 셈이다.<br>
+                    4. 플랫폼에 내장된 빌트인 프로그램과 사용자가 많은 프로그램이 동일한 API를 사용하므로 모든 프로그램은 평등하다. 원한다면 기본 제공되는 프로그램을 장비 제조사나 사용자가 원하는 것으로 교체할 수 있다. 플랫폼을 구성하는 요소를 자유롭게 선택할 수 있다는 면에서 유연성이 뛰어나다.<br>
+                    5. 개방된 환경인 만큼 개발툴과 관련 문서가 모두 무료로 제공된다. 심지어 운영체제의 핵심 소스까지도 대부분 공개되어 있다. 별도의 라이선스 비용이 들지 않으므로 단말기 가격이 저렴해지는 효과가 있으며 대중화에 유리해서 소프트웨어 수요도 많다.<br>
+                    이 외에 여러 운영체제에서 개발 가능하다는 이점이 있는데 윈도우 모바일이나 아이폰은 특정 운영체제나 장비를 요구한다는 점과 대비된다. 개발자의 접근이 용이해야 훌륭한 프로그램이 나올 사능성이 높아진다. 다른 운영체제에 비해 비교적 젊은데다 발전 속도가 빨라 최신 기능을 빨리 도입한다는 점도 장점이다. 잦은 버전업으로 인해 찌거기가 좀 생겼지만 아직까지는 하위 호환성을 잘 유지하고 있다.<br>
+                    그러나 추종자들이 한껏 치켜 세우는 것과는 달리 한계도 분명히 있다. 역사가 오래되지 못하다 보니 고도로 숙련된 개발자가 많지 않으며 개발 관련 자료가 부족하고 공식 문서조차 완전히 정비되지 않은 상태이다. SDK도 너무 자주 업그레이드되어 안정성이 떨어지며 개발툴의 사소한 버그도 상당히 많은 편이다. 기능 구현에 너무 급급하다 보니 아직은 안정화나 문서 정비에는 약한 면이 있다.<br>
+                    개방된 환경이다 보니 통제 불가능한 변종의 출현이 걱정되기도 하는데 이는 실제 현실의 문제로 대두된 상태이다. 이 문제를 파편화라고 하는데 각 제조사마다 하드웨어 구성이 다르고 통신사의 필요에 의해 OS도 편의에 따라 확장 및 변경함으로써 소프트웨어가 호환되지 않는 문제이다. 환경의 일관성이 부족해 개발 비용이 증가하고 사용자도 자신의 단말기에 맞는 소프트웨어를 찾아야 하는 불편함이 있다. 가이드라인을 제시하여 통일성을 유도하고 있지만 분명 한계가 있다.<br>
+                    공개된 운영체제는 일단 공짜라서 좋지만 명확한 지원을 기대할 수 없다는 것도 불안 요소이다. 운영체제는 리눅스에서 빌려 온 것이고, 언어는 자바를 채용했고, 개발툴은 안드로이드 스튜디오를 사용하며 하드웨어는 각 벤더마다 제각각 따로 만든다. 좋게 말하자면 오픈 소스를 멋드러지게 조합한 것이지만 나쁘게 얘기하면 오만 잡것을 다 모아 놓은 것이다. 아무래도 통합성이 떨어질 수밖에 없으며 골치아픈 문제 발생시 원인을 발견하기 어렵고 민첩하게 대응하기도 쉽지 않다.<br>
+                </p>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" id="checkbox-4" name="checkbox-accordion" />
+              <label for="checkbox-4">개발툴 및 연관사이트</label>
+              <div class="content">
+                <h5 style="color: blueviolet;" class="mt-3">안드로이드 개발툴 및 연관사이트</h5><hr>
+                <p>
+                  <a href="https://developer.android.com/studio"><img src="./resource/android_format4.png" alt="android_format4" width="100%"></a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <input type="checkbox" id="checkbox-5" name="checkbox-accordion" />
+              <label for="checkbox-5">기본코드</label>
+              <div class="content">
+                <h5 style="color: blueviolet;" class="mt-3">안드로이드 기본코드</h5><hr>
+                <p>
+                  <img src="./resource/android_format5..png" alt="android_format5" width="100%">
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </article>
+    </div>
+
+</body>
+</html>
