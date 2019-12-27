@@ -1,0 +1,45 @@
+*{margin: 0; padding: 0;}
+
+body{
+    text-align: center;
+}
+
+header{
+    background:peru;
+    padding: 100px;
+}
+
+nav{
+    /* position: sticky;
+    top: 0; */
+    width: 100%;
+    background:yellow; padding:2px;
+    text-align: start;
+}
+
+
+#body_div{
+    display: flex; flex-wrap: wrap;
+}
+
+#a_left{
+    flex: 3; background: green;
+}
+
+#a_right{
+    flex: 2; background: green;
+}
+
+article{
+    flex: 8; background: saddlebrown;
+}
+
+footer{
+    background: silver;
+    padding: 50px;
+}   
+
+.active{
+    position: fixed;
+    top: 0px;
+}
