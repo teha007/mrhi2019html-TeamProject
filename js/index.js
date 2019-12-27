@@ -13,4 +13,3 @@ function loaded() {
         open('http://www.mrhi.or.kr','_blank');
     })
 }
-
